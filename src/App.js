@@ -1,24 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import ExpenseItem from './components/expense-item/ExpenseItem';
+
 
 function App() {
-  const name = "Welcome, KQ"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          { name }
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Let's get started!!!</h2>
+      <ExpenseItem></ExpenseItem>
     </div>
   );
 }
