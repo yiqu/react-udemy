@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/react-udemy/static/css/main.073c9b0a.css",
-    "main.js": "/react-udemy/static/js/main.c78172f5.js",
+    "main.css": "/react-udemy/static/css/main.3f44d8de.css",
+    "main.js": "/react-udemy/static/js/main.e62e20ff.js",
     "static/js/787.7b678fb3.chunk.js": "/react-udemy/static/js/787.7b678fb3.chunk.js",
-    "static/media/logo.svg": "/react-udemy/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/react-udemy/index.html",
-    "main.073c9b0a.css.map": "/react-udemy/static/css/main.073c9b0a.css.map",
-    "main.c78172f5.js.map": "/react-udemy/static/js/main.c78172f5.js.map",
+    "main.3f44d8de.css.map": "/react-udemy/static/css/main.3f44d8de.css.map",
+    "main.e62e20ff.js.map": "/react-udemy/static/js/main.e62e20ff.js.map",
     "787.7b678fb3.chunk.js.map": "/react-udemy/static/js/787.7b678fb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.c78172f5.js"
+    "static/css/main.3f44d8de.css",
+    "static/js/main.e62e20ff.js"
   ]
 }
