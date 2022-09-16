@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Expenses from './expenses/Expenses';
 import NewExpense from "./new-expense/input/NewExpense";
 
@@ -5,6 +6,24 @@ import NewExpense from "./new-expense/input/NewExpense";
 function App() {
 
   const expenses = [
+    {
+      id: 'e11',
+      title: 'IKEA trip',
+      amount: 94.12,
+      date: new Date(2019, 7, 14),
+    },
+    {
+      id: 'e12',
+      title: 'Boba tea',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    {
+      id: 'e13',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2022, 7, 14),
+    },
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -26,10 +45,24 @@ function App() {
     },
   ];
 
+  const [expenseList, setExpenses] = useState(expenses);
+
+  const formSubmitHandler = (expenseData) => {
+    console.log(expenseData);
+    setExpenses((prevState) => {
+      const prev = [...prevState];
+      prev.unshift({
+        ...expenseData,
+        date: new Date(expenseData.date)
+      });
+      return prev;
+    });
+  };
+
   return (
     <div>
-      <NewExpense></NewExpense>
-      <Expenses items={ expenses }></Expenses>
+      <NewExpense onAddExpense={ formSubmitHandler }></NewExpense>
+      <Expenses items={ expenseList }></Expenses>
     </div>
   );
 }

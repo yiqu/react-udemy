@@ -1,7 +1,7 @@
 {
   "name": "react-udemy",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://yiqu.github.io/react-udemy",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -27,7 +27,15 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "semi": [1, "always"],
+      "react/jsx-curly-spacing": [ 1, "always" ],
+      "no-use-before-define": [ 0, { "functions": false } ],
+      "react/jsx-indent": [ 1, 2 ],
+      "space-in-parens": [ 1, "never" ],
+      "no-const-assign": [ 2 ]
+    }
   },
   "browserslist": {
     "production": [
@@ -40,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass": "^1.54.9"
   }
 }
