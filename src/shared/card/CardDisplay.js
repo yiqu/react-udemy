@@ -8,9 +8,13 @@ const Card = (props) => {
 
   return (
     <div className={ cssClass }>
-      <div className="count">
-        { ((props.index) ?? 0) + 1}
-      </div>
+      { shouldShowCount ? 
+        <div className="count">
+          { ((props.index) ?? 0) + 1}
+        </div> 
+      :
+        <div></div>
+      }
       { props.children }
     </div>
   );

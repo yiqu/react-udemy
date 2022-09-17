@@ -2,14 +2,21 @@ import { useState } from "react";
 import './NewExpenseForm.css';
 
 const NewExpenseForm = (props) => {
-
   const currentDate = new Date().toISOString().split('T')[0];
 
-  let [expenseFormEnteredData, setExpenseData] = useState({
+  let formValues = {
     title: 'Cool expense',
     amount: 0,
     date: currentDate
-  });
+  };
+  
+  if (props.usePrevEntry) {
+    formValues = {
+      ...props.prevEntry
+    };
+  }
+
+  let [expenseFormEnteredData, setExpenseData] = useState(formValues);
 
   const formChangeHander = (e) => {
     setExpenseData((prevState) => {
@@ -18,6 +25,10 @@ const NewExpenseForm = (props) => {
         [e.target.id]: e.target.value
       };
     });
+  };
+
+  const cancelNewExpenseHandler = () => {
+    props.onFormCancel(expenseFormEnteredData);
   };
 
   const generateRandomFormData = () => {
@@ -73,7 +84,11 @@ const NewExpenseForm = (props) => {
           <div>
             <button type="button" onClick={ generateRandomFormData }>Random</button>
           </div>
-          <button type="submit">Submit</button>
+          <div>
+            <button type="button" onClick={ cancelNewExpenseHandler }>Cancel</button>
+            <button type="submit">Submit</button>
+          </div>
+          
         </div>
       </form>
       <div>

@@ -8,7 +8,7 @@ export function ExpensePrice(props) {
         { props.info.title }
       </h2>
       <div className='expense-item__price'>
-        ${ props.info.amount }
+        ${ +(props.info.amount) }
       </div>
     </div>
   );

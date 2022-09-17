@@ -6,6 +6,11 @@ import './ExpenseDateFilter.scss';
 const ExpenseDateFilter = (props) => {
 
   const currentYear = props.yearToSelect ?? '2020';
+  let yearOptions = ['all', '2022', '2021', '2020', '2019', '2018'];
+  yearOptions = yearOptions.map((year) => {
+    return <option value={ year } key={ year }>{year}</option>;
+  });
+  
   const [yearState, setYearState] = useState(currentYear);
 
   const yearSelectHandler = (event) => {
@@ -19,11 +24,7 @@ const ExpenseDateFilter = (props) => {
         <label className="label">Filter by year ({yearState})</label>
 
         <select onChange={ yearSelectHandler } value={ yearState }>
-          <option value='all'>All</option>
-          <option value='2022'>2022</option>
-          <option value='2021'>2021</option>
-          <option value='2020'>2020</option>
-          <option value='2019'>2019</option>
+          { yearOptions }
         </select>
       </div>
     </div>

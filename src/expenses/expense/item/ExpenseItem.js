@@ -21,14 +21,17 @@ const ExpenseItem = (props) => {
   };
 
   return (
-    <Card className="expense-item" shouldShowCount={ true } index={ props.expenseIndex }>
-      <ExpenseDate date={ props.expense.date }></ExpenseDate>
-      <ExpensePrice info={ props.expense }></ExpensePrice>
-      <div>
-        { titleName }
-      </div>
-      <button onClick={ onClick }> Change Title </button>
-    </Card>
+    <li>
+      <Card className="expense-item" shouldShowCount={ true } index={ props.expenseIndex }>
+        <ExpenseDate date={ props.expense.date }></ExpenseDate>
+        <ExpensePrice info={ props.expense }></ExpensePrice>
+        <div>
+          { titleName }
+        </div>
+        <button onClick={ onClick }> Change Title </button>
+      </Card>
+    </li>
+    
   );
 };
 

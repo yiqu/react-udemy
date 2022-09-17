@@ -1,7 +1,8 @@
-import ExpenseItem from './expense/item/ExpenseItem';
 import Card from '../shared/card/CardDisplay';
 import ExpenseDateFilter from './date-filter/ExpenseDateFilter';
 import './Expenses.css';
+import ExpensesList from './expense/list/ExpensesList';
+import ExpensesChart from './expenses-chart/ExpensesChart';
 import { useState } from "react";
 
 const Expenses = (props) => {
@@ -30,18 +31,25 @@ const Expenses = (props) => {
     });
   };
 
+ 
+
   return (
-    <Card className="expenses" shouldShowCount={ false }>
+    <div>
+      <Card className="expenses" shouldShowCount={ false }>
+        <ExpensesChart items={ items }></ExpensesChart>
+      </Card>
 
-      <div className="white">{JSON.stringify(filteredYear)}</div>
+      <Card className="expenses" shouldShowCount={ false }>
 
-      <ExpenseDateFilter onYearFilter={ yearFilterHandler } yearToSelect={ filteredYear.filteredYear } />
+        <div className="white">{JSON.stringify(filteredYear)}</div>
 
-      { items.map((expense, index) => {
-        return <ExpenseItem key={ expense.id } expense={ expense } expenseIndex={ index }></ExpenseItem>;
-      }) }
+        <ExpenseDateFilter onYearFilter={ yearFilterHandler } yearToSelect={ filteredYear.filteredYear } />
 
-    </Card>
+        <ExpensesList list={ items } />
+
+      </Card>
+    </div>
+    
   );
 };
 
